@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hyrox Workout Generator
+
+A web app that generates Hyrox training workouts, backed by MongoDB.
+
+## Tech Stack
+
+- Next.js 16 (App Router) · React 19 · TypeScript
+- Tailwind CSS 4
+- MongoDB Atlas
+
+## Features
+
+- Browse workouts by category: Engine, Strength, and full Workout routines
+- Fetches workout data (type, duration, description) from MongoDB
+- Responsive UI with dark mode support
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js
+- A MongoDB instance with a `hyrox-workouts` database and `workout` collection
+
+### Setup
+
+1. Clone the repo and install dependencies:
+
+```bash
+npm install
+```
+
+2. Create a `.env.local` file in the project root:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── api/
+│   │   └── workout/
+│   │       └── route.tsx   # GET /api/workout — returns a random workout from MongoDB
+│   ├── layout.tsx           # Root layout (fonts, metadata)
+│   ├── page.tsx             # Home page — workout generator UI
+│   └── globals.css          # Global styles and Tailwind imports
+└── lib/
+    └── mongodb.tsx          # MongoDB client singleton (connection pooling)
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The app is designed to deploy on [Vercel](https://vercel.com). Push to your connected repository and Vercel will build and deploy automatically.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set the following environment variable in your Vercel project settings:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Description |
+|----------|-------------|
+| `MONGODB_URI` | MongoDB Atlas connection string |
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm start` | Start production server |
+| `npm run lint` | Run ESLint |
