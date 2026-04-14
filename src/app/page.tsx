@@ -1,59 +1,42 @@
-"use client";
+// app/login/page.tsx
+"use client"; // Must be a Client Component to handle form state
 
-import { Outfit } from "next/font/google";
-import { useState } from "react";
+import { useState } from 'react';
 
-const outfitFont = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-type Workout = {
-  workout_type: string
-  workout_duration: string
-  description: string
-}
-
-export default function Page() {
-  const [workout, setWorkout] = useState<Workout | null>(null);
-  const [loading, setLoading] = useState(false);
-  
-    async function handleWorkout() {
-      setLoading(true);
-      try {
-        const res = await fetch("/api/workout");
-        const data = await res.json();
-        setWorkout(data[0] ?? null);
-      } finally {
-        setLoading(false);
-      }
-    }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Logic for authentication goes here
+    console.log("Logging in with:", { email, password });
+  };
 
   return (
-    <div className="page-container">
-      <h1 style={{ fontFamily: outfitFont.style.fontFamily }}>Hyrox Workout Generator</h1>
-      <div className="button-row">
-        <button type="button" className="engine" style={{ fontFamily: outfitFont.style.fontFamily }}>Engine</button>
-        <button type="button" className="strength" style={{ fontFamily: outfitFont.style.fontFamily }}>Strength</button>
-        <button type="button" className="workout" onClick={handleWorkout} style={{ fontFamily: outfitFont.style.fontFamily }}>
-          {loading ? "Loading..." : "Workout"}
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <form onSubmit={handleSubmit} className="p-8 bg-white shadow-md rounded-lg w-96">
+        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+        <input 
+          type="email" 
+          placeholder="Email" 
+          className="w-full p-2 mb-4 border border-gray-300 rounded"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          className="w-full p-2 mb-6 border border-gray-300 rounded"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+          Sign In
         </button>
-
-      </div>
-      {workout && (
-        <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <pre
-            style={{ fontFamily: outfitFont.style.fontFamily, textAlign: 'center' }}
-          >
-            {workout.workout_type.replace(/\\n/g, '\n')}
-            {'\n'}
-            {workout.workout_duration.replace(/\\n/g, '\n')}
-            {'\n'}
-            {'\n'}
-            {workout.description.replace(/\\n/g, '\n')}
-          </pre>
-        </div>
-      )}
+      </form>
     </div>
   );
 }
