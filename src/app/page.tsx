@@ -30,14 +30,12 @@ export default function Page() {
     }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "80vh", padding: "20px" }}>
-      <h1 style={{ fontWeight: "bold", marginBottom: "20px", fontFamily: outfitFont.style.fontFamily }}>Hyrox Workout Generator</h1>
-      <div style={{ maxWidth: "400px", width: "100%", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
-
-        {/* Workout Types */}
-        <button type="button" className="engine" style={{ width: "120px", height: "120px", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: outfitFont.style.fontFamily }}>Engine</button>
-        <button type="button" className="strength" style={{ width: "120px", height: "120px", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: outfitFont.style.fontFamily }}>Strength</button>
-        <button type="button" className="workout" onClick={handleWorkout} style={{ width: "120px", height: "120px", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: outfitFont.style.fontFamily }}>
+    <div className="page-container">
+      <h1 style={{ fontFamily: outfitFont.style.fontFamily }}>Hyrox Workout Generator</h1>
+      <div className="button-row">
+        <button type="button" className="engine" style={{ fontFamily: outfitFont.style.fontFamily }}>Engine</button>
+        <button type="button" className="strength" style={{ fontFamily: outfitFont.style.fontFamily }}>Strength</button>
+        <button type="button" className="workout" onClick={handleWorkout} style={{ fontFamily: outfitFont.style.fontFamily }}>
           {loading ? "Loading..." : "Workout"}
         </button>
 
