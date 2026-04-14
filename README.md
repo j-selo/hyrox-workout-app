@@ -10,6 +10,7 @@ A web app that generates Hyrox training workouts, backed by MongoDB.
 
 ## Features
 
+- Login page for user authentication
 - Browse workouts by category: Engine, Strength, and full Workout routines
 - Fetches workout data (type, duration, description) from MongoDB
 - Responsive UI with dark mode support
@@ -49,13 +50,23 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 src/
 ├── app/
 │   ├── api/
+│   │   ├── auth/
+│   │   │   └── route.tsx      # POST /api/auth — authentication
+│   │   ├── engine/
+│   │   │   └── route.tsx      # GET /api/engine — returns a random engine workout
+│   │   ├── strength/
+│   │   │   └── route.tsx      # GET /api/strength — returns a random strength workout
 │   │   └── workout/
-│   │       └── route.tsx   # GET /api/workout — returns a random workout from MongoDB
-│   ├── layout.tsx           # Root layout (fonts, metadata)
-│   ├── page.tsx             # Home page — workout generator UI
-│   └── globals.css          # Global styles and Tailwind imports
+│   │       └── route.tsx      # GET /api/workout — returns a random workout from MongoDB
+│   ├── login/
+│   │   └── page.tsx           # Login page
+│   ├── workout-gen/
+│   │   └── page.tsx           # Workout generator UI (Engine, Strength, Workout buttons)
+│   ├── layout.tsx             # Root layout (fonts, metadata)
+│   ├── page.tsx               # Home page
+│   └── globals.css            # Global styles and Tailwind imports
 └── lib/
-    └── mongodb.tsx          # MongoDB client singleton (connection pooling)
+    └── mongodb.tsx            # MongoDB client singleton (connection pooling)
 ```
 
 ## Deployment
