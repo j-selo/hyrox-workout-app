@@ -29,7 +29,7 @@ h1 {
   align-items: center;
 }
 
-.engine, .strength, .workout {
+.engine, .strength, .workout, .login {
   width: 120px;
   height: 120px;
   display: flex;
