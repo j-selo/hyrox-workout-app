@@ -33,7 +33,7 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600" onClick={() => window.location.href = '/home'}>
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600" onClick={() => window.location.href = '/workouts'}>
           Sign In
         </button>
       </form>

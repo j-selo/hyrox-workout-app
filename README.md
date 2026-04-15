@@ -71,7 +71,7 @@ src/
 
 ## Deployment
 
-The app is designed to deploy on [Vercel](https://vercel.com). Push to your connected repository and Vercel will build and deploy automatically.
+The app is designed to deploy on [Vercel](https://vercel.com) or [Netlify](https://netlify.com). Push to your connected repository and either provider will build and deploy automatically.
 
 Set the following environment variable in your Vercel project settings:
 
