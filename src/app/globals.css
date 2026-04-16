@@ -1,7 +1,9 @@
 @import "tailwindcss";
+/* @import "@picocss/pico/css/pico.min.css"; */
 
 body {
-  background-color: #ffffff;
+  background-color: white;
+  color: black;
 }
 
 h1 {
@@ -11,6 +13,29 @@ h1 {
   margin-bottom: 20px;
   font-family: 'Outfit', sans-serif;
 }
+
+h2 {
+  font-style: italic;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.tagline {
+  font-size: 17px;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  color: black;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+/* .divider {
+  border: none;
+  border-top: 8px solid #1e1e1e;
+  margin: 0 0 2rem;
+} */
 
 .page-container {
   display: flex;
@@ -29,7 +54,21 @@ h1 {
   align-items: center;
 }
 
-.engine, .strength, .workout, .login {
+.login {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 200;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: #d3cdcd;
+  font-family: 'Outfit', sans-serif;
+}
+
+.engine, .strength, .workout {
   width: 120px;
   height: 120px;
   display: flex;

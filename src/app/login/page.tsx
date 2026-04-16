@@ -1,5 +1,4 @@
-// app/login/page.tsx
-"use client"; // Must be a Client Component to handle form state
+"use client";
 
 import { useState } from 'react';
 
