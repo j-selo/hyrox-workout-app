@@ -1,11 +1,11 @@
 "use client";
 
-import { Outfit } from "next/font/google";
+// import { Outfit } from "next/font/google";
 
-const outfitFont = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+// const outfitFont = Outfit({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+// });
 
 export default function Page() {
   return (
