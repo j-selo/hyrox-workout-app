@@ -82,3 +82,11 @@ h2 {
   background-color: #d3cdcd;
   font-family: 'Outfit', sans-serif;
 }
+
+.category-cards {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

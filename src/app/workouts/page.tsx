@@ -33,7 +33,7 @@ export default function Page() {
     <div className="page-container">
       <h1 style={{ fontFamily: outfitFont.style.fontFamily }}>Hyrox Workout Generator</h1>
       
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="category-cards flex flex-col md:flex-row gap-4">
           {/* Card 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md flex-1">
             <h2 className="text-xl font-bold">Engine</h2>
