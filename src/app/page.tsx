@@ -10,6 +10,7 @@ const outfitFont = Outfit({
 export default function Page() {
   return (
     <div className="page-container">
+      <div className="badge">Hyrox Training Tool</div>
       <h1>Hyrox Workout Generator</h1>
       <h2>Your Personal Hyrox Training Companion</h2>
       <p className="tagline">Built for athletes who train with purpose. Whether you&apos;re chasing a<br /> personal best or stepping onto the competition floor for the first time,<br />get Hyrox-specific sessions built for you every single time.</p>
