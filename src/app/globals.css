@@ -45,12 +45,6 @@ h2 {
   max-width: 540px;
 }
 
-/* .divider {
-  border: none;
-  border-top: 8px solid #1e1e1e;
-  margin: 0 0 2rem;
-} */
-
 .page-container {
   display: flex;
   flex-direction: column;
